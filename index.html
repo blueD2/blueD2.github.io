@@ -82,6 +82,12 @@
 				font-family:'Montserrat', sans-serif;
 				text-transform: uppercase;
 			}
+			.test{
+				position:inline-block;
+				width:20%
+				background-color: blue;
+				margin:2px;
+			}
 		</style>
 	</head>
 	<body>
@@ -112,12 +118,18 @@
 					<em>Class of 2021</em></td>
 				<td><b>Thomas Jefferson HS for Science &amp; Technology</b> 2013-2014<br>
 					<b>The Woodlands High School</b> 2014-2017<br>
-					Class Rank: <em>15/1081</em><br>
+					Class Rank: <em>15/1083</em><br>
 					Weighted GPA: <em>5.2</em><br>
 					Unweighted GPA:<em> 4.0</em></td></tr>
 				</tbody>
 			</table>
 			<h2>Test Scores</h2>
+			<div class="test" id="psat"></div>
+			<div class="test" id="sat"></div>
+			<div class="test" id="satmath"></div>
+			<div class="test" id="satphysics"></div>
+			<div class="test" id="act"></div>
+			
 		</div>
 		<div class="main" id="activities">		
 			<h1>Activities</h1>
@@ -162,6 +174,9 @@
 				</tr></tbody>
 			</table>
 		</div>
-				 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script>
+			$("p").text("jQuery is the GREATEST!!!");
+		</script>
 	</body>
 </html>
