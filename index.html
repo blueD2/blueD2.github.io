@@ -45,6 +45,7 @@
 				border-radius:50%;
 				filter: grayscale(100%);
 			}
+			#profilepic:hover{ opacity:.8;}
 			#nav{
 				/*color:rgba(248, 248, 255,.7);*/
 				list-style:none;
@@ -83,11 +84,17 @@
 				text-transform: uppercase;
 			}
 			.test{
-				position:inline-block;
-				width:20%;
-				background-color: blue;
-				margin:2px;
+				display:inline-block;
+				width:14vw;
+				margin: 0px;
+				text-align:center;
 			}
+			canvas{
+				width:290px;
+				height:145px;
+				margin-left:1vw;
+			}
+			#fadeactivities{display:none;}
 		</style>
 	</head>
 	<body>
@@ -100,7 +107,7 @@
 		<div id="sidebar">
 			<img id="profilepic" src="http://i1376.photobucket.com/albums/ah36/blueD2/me_zpsefoxogzc.jpg">
 			<ul id="nav">
-				<li><a href="#education">Education</a>
+				<li><a href="#education" <!--onclick="testAnimation()-->">Education</a>
 				<li><a href="#activities">Activities</a>
 				<li><a href="#service">Community Service</a>
 				<li><a href="#work">Work Experience</a>
@@ -124,21 +131,51 @@
 				</tbody>
 			</table>
 			<h2>Test Scores</h2>
-			<div class="test" id="psat"></div>
-			<div class="test" id="sat"></div>
-			<div class="test" id="satmath"></div>
-			<div class="test" id="satphysics"></div>
-			<div class="test" id="act"></div>
-			
+			<div class="test"> <canvas id="psat"> PSAT <br> 1510/1520 </canvas> PSAT <br> 1510/1520 </div
+			><div class="test"> <canvas id="sat">  </canvas> SAT <br> 1590/1620</div
+			><div class="test" > <canvas id="satmath">  </canvas>SAT Math II <br> 800/800</div
+			><div class="test"> <canvas id="satphysics">  </canvas>SAT Physics <br> 790/800</div
+			><div class="test"> <canvas id="act"> </canvas>ACT <br> 34/36 </div>
 		</div>
 		<div class="main" id="activities">		
 			<h1>Activities</h1>
-			<table>
-				<tbody><tr>
-				<td></td>
-				<td></td>
-				</tr></tbody>
-			</table>
+			<div id="fadeactivities">
+			<b>Yearbook</b> 2013 - 2017
+				<ul>
+					<li>Editor in Chief (12) & Academics Editor (11): trained staff, took photos, wrote and edited copy, designed pages in InDesign</li>
+				</ul>
+			<b>Spanish National Honor Society: </b>2015 - 2017
+				<ul>
+					<li>President (12) & Secretary (11): Elected. Ran service projects, meetings, & tutoring</li>
+				</ul>
+			<b>NASA High School Aerospace Scholars </b>2016 - 2017
+				<ul>
+					<li>Passed four-month online training course</li>
+					<li>Explored NASA behind the scenes, speaking with engineers and scientists</li>
+					<li>Won 1st place in team engineering contests</li>
+				</ul>
+			<b>TEDxYouth@TheWoodlands </b>2016
+				<ul>
+					<li>Director of Operations: worked on fundraising, publicity, speakers, and stage design for local TEDxYouth conference</li>
+					<li>Prepared and delivered a speech about the Uncanny Valley effect</li>
+				</ul>
+			<b>VEX Robotics </b>2015 - 2017
+					<ul>
+						<li>Media Captain (11-12)</li>
+						<li>Built and programmed competitive robots</li>
+						<li>Won Sportsmanship Award & Design Award. Quarterfinalists in world-qualifiers</li>
+					</ul>
+			<b>Mu Alpha Theta Math Honor Society</b> 2014 - 2017
+				<ul>
+					<li>Treasurer (12): Elected. Organized events and ensured payment of dues</li>
+					<li>Tutored math, attended monthly meetings, and captained Math Relay competitions</li>
+				</ul>
+			<b>Bharathanatyam </b>
+				<ul>
+					<li>Trained in classical Indian dance for 12 years, performinng about 5 times every year
+					<li>Completed arangetram - fundraiser for Texas Children's Hospital
+				</ul>
+			</div>
 		</div>
 		<div class="main" id="service">		
 			<h1>Community Service</h1>
@@ -153,7 +190,7 @@
 				<td><ul>
 					<li>National Merit Finalist, 12
 					<li>National Congressional Award Silver Medal, 12
-					<li>AP Scholar with Distinction, 12
+					<li>National AP Scholar, 12
 					<li>National Center for Women in Technology Affiliate Aspirations in Computing Award, 12
 					<li>Principal’s Leadership Council, 12
 					<li>National Spanish Exam Gold Medal Level II &amp; IV, 9 &amp; 11
@@ -176,7 +213,119 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script>
-			$(".test").text("jQuery is the GREATEST!!!");
+		
+			$("#profilepic").click(function() { 
+				$("html, body").animate({ scrollTop: 0 }, "slow");
+			});
+			
+			var interval;
+			var testSpeed = 35;
+			var angle1, angle2, angle3, angle4, angle5;
+			function testAnimation() {
+				angle1 = 1.5*Math.PI;
+				angle2 = 1.5*Math.PI;
+				angle3 = 1.5*Math.PI;
+				angle4 = 1.5*Math.PI;
+				angle5 = 1.5*Math.PI;
+				interval = setInterval(psat,testSpeed);
+				interval = setInterval(sat,testSpeed);
+				interval = setInterval(satmath, testSpeed);
+				interval = setInterval(satphysics, testSpeed);
+				interval = setInterval(act, testSpeed);
+			}
+			
+			$(window).scroll(function() {
+				if($(this).scrollTop() > 0) {
+					testAnimation();
+				}
+				if ($(this).scrollTop() > 500){
+					$("#fadeactivities").fadeIn("slow");
+				}
+				/*if ($(this).width() < 992) {
+					if ($(this).height() <= 768) {
+						
+						
+					}
+				}*/
+			});
+
+			function psat() {
+				var draw = document.getElementById("psat").getContext("2d");
+				draw.beginPath();
+				draw.lineWidth=15;
+				draw.strokeStyle = "#de6f1e";
+				draw.arc(100,75,50,1.5*Math.PI,angle1);
+				draw.stroke();
+				angle1+=.07;
+				if(angle1>3.47*Math.PI) {
+					clearInterval(interval);
+					angle1 = 1.5*Math.PI;
+				}
+				
+			}
+			
+			function sat() {
+				var draw = document.getElementById("sat").getContext("2d");
+				draw.beginPath();
+				draw.lineWidth=15;
+				draw.strokeStyle = "#de6f1e";
+				draw.arc(100,75,50,1.5*Math.PI,angle2);
+				draw.stroke();
+				angle2+=.07;
+				if(angle2>3.35*Math.PI) {
+					clearInterval(interval);
+					angle2 = 1.5*Math.PI;
+				}
+				
+			}
+			
+			function satmath() {
+				var draw = document.getElementById("satmath").getContext("2d");
+				draw.beginPath();
+				draw.lineWidth=15;
+				draw.strokeStyle = "#de6f1e";
+				draw.arc(100,75,50,1.5*Math.PI,angle3);
+				draw.stroke();
+				angle3+=.07;
+				if(angle3>3.6*Math.PI) {
+					clearInterval(interval);
+					angle3 = 1.5*Math.PI;
+				}
+				
+			}
+			
+			function satphysics() {
+				var draw = document.getElementById("satphysics").getContext("2d");
+				draw.beginPath();
+				draw.lineWidth=15;
+				draw.strokeStyle = "#de6f1e";
+				draw.arc(100,75,50,1.5*Math.PI,angle4);
+				draw.stroke();
+				angle4+=.07;
+				if(angle4>3.45*Math.PI) {
+					clearInterval(interval);
+					angle4 = 1.5*Math.PI;
+				}
+				
+			}
+			
+			function act() {
+				var draw = document.getElementById("act").getContext("2d");
+				draw.beginPath();
+				draw.lineWidth=15;
+				draw.strokeStyle = "#de6f1e";
+				draw.arc(100,75,50,1.5*Math.PI,angle5);
+				draw.stroke();
+				angle5+=.07;
+				if(angle5>3.31*Math.PI) {
+					clearInterval(interval);
+					angle5 = 1.5*Math.PI;
+				}
+				
+			}
+			
+			
+
 		</script>
 	</body>
 </html>
