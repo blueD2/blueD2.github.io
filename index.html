@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Nivedhitha Selvaraj Resume</title>
+		<title>Vanilla Muse</title>
 		<meta charset="utf-8" />
 		<link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway|Homemade+Apple" rel="stylesheet">
 		<style>
@@ -100,17 +100,27 @@
 				margin-left:1vw;
 			}
 			#testscores{margin-left:-4%;}
-			#fadeactivities, #fadeservice, #fadework, {display:none;}
+			#fadeactivities, #fadeservice, #fadework {display:none;}
 			#workcontainer img{
 				display:inline-block;
 				width:20%;
 			}
+			summary {text-decoration: underline;}
 			#workcontainer div{
 				display:inline-block;
 				width:15%;
 				margin-right:50px;
 				background-color:ghostwhite;
 				color:ghostwhite;
+				padding:10px;
+			}
+			#backtotop{
+				width:65vw;
+				margin-left:29vw;
+				background-color:#3a4147;
+				color:ghostwhite;
+				clear:both;
+				text-align:center;
 				padding:10px;
 			}
 		</style>
@@ -123,7 +133,7 @@
 			</div>
 		</header>
 		<div id="sidebar">
-			<img id="profilepic" src="http://i1376.photobucket.com/albums/ah36/blueD2/me_zpsefoxogzc.jpg">
+			<img class="scrollup" id="profilepic" src="http://i1376.photobucket.com/albums/ah36/blueD2/me_zpsefoxogzc.jpg">
 			<ul id="nav">
 				<li><a href="#education" <!--onclick="testAnimation()-->">Education</a>
 				<li><a href="#activities">Activities</a>
@@ -206,14 +216,14 @@
 			<table>
 				<thead><tr><th>Audiobooks</th><th>Library</th><th>Tutoring</th><th>Other Projects</th></tr></thead>
 				<tbody>
-				<tr><td>-<em>2015-2017: </em>Volunteered for Learning Ally, recording textbooks for students with learning disabilities<br>
-						-<em>2013-2014: </em>Recorded picture books for RAD (Recording Audio for the Disabled)</td>
-					<td>-<em>2014-2016: </em>Organized shelves, processed library materials, and helped run library events for teens and families at George Mitchell Cynthia Woods Public Library</td>
-					<td>-<em>2013-2014: </em>Helped struggling students with math at Holmes Middle School<br>
-						-<em>2014-2017: </em>Tutored algebra, geometry, statistics, and pre-calculus after school</td>
-					<td>-<em>2016: </em>Raised $1000 in a week for Project PIRUW to help build a school in Peru<br>
-						-<em>2015: </em>Organized a holiday drive for Latina Legacy<br>
-						-<em>2014: </em>Worked as a stage hand for Reston Community Players, an all-volunteer non-profit community theater</td>
+				<tr><td><details><summary>Learning Ally</summary><em>(2015-2017) </em>Recording textbooks for students with learning disabilities</details><br>
+						<details><summary>RAD</summary><em>(2013-2014) </em>Recorded picture books for Recording Audio for the Disabled</details></td>
+					<td><details><summary>George Mitchell Cynthia Woods Public Library</summary><em>(2014-2016) </em>Organized shelves, processed library materials, and helped run library events for teens and families</details></td>
+					<td><details><summary>TWHS</summary><em>(2014-2017)</em> Tutored algebra, geometry, statistics, and pre-calculus after school</details><br>
+						<details><summary>Holmes Middle School</summary><em>(2013-2014)</em> Helped struggling students with math problems</details></td>
+					<td><details><summary>Project PIRUW</summary><em>(2016)</em> Raised $1000 in a week for Project PIRUW to help build a school in Peru</details><br>
+						<details><summary>Latina Legacy</summary><em>(2015)</em> Organized a holiday drive for impoverished families</details><br>
+						<details><summary>Reston Community Players</summary><em>(2014)</em> Worked as a stage hand for an all-volunteer non-profit community theater</details></td>
 				</tr>
 				</tbody>
 			</table>
@@ -262,10 +272,11 @@
 				</tr></tbody>
 			</table>
 		</div>
+		<!--<div class="scrollup" id="backtotop"> &#8613 back to top </div>-->
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script>
-		
-			$("#profilepic").click(function() { 
+			$(".scrollup").click(function() { 
 				$("html, body").animate({ scrollTop: 0 }, "slow");
 			});
 			
@@ -289,10 +300,10 @@
 				if($(this).scrollTop() > 0) {
 					testAnimation();
 				}
-				if ($(this).scrollTop() > 400){
+				if ($(this).scrollTop() > 450){
 					$("#fadeactivities").fadeIn("slow");
 				}
-				if ($(this).scrollTop() > 1255){
+				if ($(this).scrollTop() > 1200){
 					$("#fadeservice").fadeIn("slow");
 				}
 				if ($(this).scrollTop() > 1800){
