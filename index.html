@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>Resume | Nivedhitha Selvaraj</title>
+		<title>Nivedhitha Selvaraj Resume</title>
 		<meta charset="utf-8" />
 		<link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway|Homemade+Apple" rel="stylesheet">
 		<style>
@@ -100,7 +100,7 @@
 				margin-left:1vw;
 			}
 			#testscores{margin-left:-4%;}
-			#fadeactivities, #fadeservice, #fadework, #fadeawards{display:none;}
+			#fadeactivities, #fadeservice, #fadework, {display:none;}
 			#workcontainer img{
 				display:inline-block;
 				width:20%;
@@ -236,7 +236,6 @@
 		</div>
 		<div class="main" id="awards">		
 			<h1>Awards &amp; Honors</h1>
-			<div id="fadeawards">
 			<table>
 				<tbody><tr>
 				<td><ul>
@@ -262,7 +261,6 @@
 			</ul></td>
 				</tr></tbody>
 			</table>
-			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script>
@@ -299,9 +297,6 @@
 				}
 				if ($(this).scrollTop() > 1800){
 					$("#fadework").fadeIn("slow");
-				}
-				if ($(this).scrollTop() > 2040){
-					$("#fadeawards").fadeIn("slow");
 				}
 			});
 			
