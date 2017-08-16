@@ -6,6 +6,7 @@
 		<meta charset="utf-8" />
 		<link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway|Homemade+Apple" rel="stylesheet">
 		<style>
+			::selection { background: silver; }
 			body{
 				background-color:ghostwhite;
 				font-family: 'Raleway', sans-serif;
@@ -74,7 +75,11 @@
 				font-family: 'Homemade Apple', cursive;
 				text-transform: lowercase;
 			}
-			table{width:100%;vertical-align:top;}
+			table{
+				width:92%;
+				table-layout: fixed;
+			}
+			td{vertical-align:top;padding:1%;}
 			h2, th{
 				text-align:left;
 				color:#de6f1e;
@@ -94,12 +99,25 @@
 				height:145px;
 				margin-left:1vw;
 			}
-			#fadeactivities{display:none;}
+			#testscores{margin-left:-4%;}
+			#fadeactivities, #fadeservice, #fadework, #fadeawards{display:none;}
+			#workcontainer img{
+				display:inline-block;
+				width:20%;
+			}
+			#workcontainer div{
+				display:inline-block;
+				width:15%;
+				margin-right:50px;
+				background-color:ghostwhite;
+				color:ghostwhite;
+				padding:10px;
+			}
 		</style>
 	</head>
 	<body>
 		<header>
-			<img id=headerpic src="http://i1376.photobucket.com/albums/ah36/blueD2/resumeheader_zpsj299mbju.jpg">
+			<img id="headerpic" src="http://i1376.photobucket.com/albums/ah36/blueD2/resumeheader_zpsj299mbju.jpg">
 			<div id = "name">
 				<strong>NILA SELVARAJ</strong>
 			</div>
@@ -130,13 +148,17 @@
 					Unweighted GPA:<em> 4.0</em></td></tr>
 				</tbody>
 			</table>
+			
 			<h2>Test Scores</h2>
-			<div class="test"> <canvas id="psat"> PSAT <br> 1510/1520 </canvas> PSAT <br> 1510/1520 </div
-			><div class="test"> <canvas id="sat">  </canvas> SAT <br> 1590/1620</div
-			><div class="test" > <canvas id="satmath">  </canvas>SAT Math II <br> 800/800</div
-			><div class="test"> <canvas id="satphysics">  </canvas>SAT Physics <br> 790/800</div
-			><div class="test"> <canvas id="act"> </canvas>ACT <br> 34/36 </div>
+			<div id="testscores">
+				<div class="test"> <canvas id="psat"> PSAT <br> 1510/1520 </canvas> PSAT <br> 1510/1520 </div
+				><div class="test"> <canvas id="sat">  </canvas> SAT <br> 1590/1620</div
+				><div class="test" > <canvas id="satmath">  </canvas>SAT Math II <br> 800/800</div
+				><div class="test"> <canvas id="satphysics">  </canvas>SAT Physics <br> 790/800</div
+				><div class="test"> <canvas id="act"> </canvas>ACT <br> 34/36 </div>
+			</div>
 		</div>
+		
 		<div class="main" id="activities">		
 			<h1>Activities</h1>
 			<div id="fadeactivities">
@@ -177,14 +199,44 @@
 				</ul>
 			</div>
 		</div>
+		
 		<div class="main" id="service">		
 			<h1>Community Service</h1>
-		</div>
+			<div id="fadeservice">
+			<table>
+				<thead><tr><th>Audiobooks</th><th>Library</th><th>Tutoring</th><th>Other Projects</th></tr></thead>
+				<tbody>
+				<tr><td>-<em>2015-2017: </em>Volunteered for Learning Ally, recording textbooks for students with learning disabilities<br>
+						-<em>2013-2014: </em>Recorded picture books for RAD (Recording Audio for the Disabled)</td>
+					<td>-<em>2014-2016: </em>Organized shelves, processed library materials, and helped run library events for teens and families at George Mitchell Cynthia Woods Public Library</td>
+					<td>-<em>2013-2014: </em>Helped struggling students with math at Holmes Middle School<br>
+						-<em>2014-2017: </em>Tutored algebra, geometry, statistics, and pre-calculus after school</td>
+					<td>-<em>2016: </em>Raised $1000 in a week for Project PIRUW to help build a school in Peru<br>
+						-<em>2015: </em>Organized a holiday drive for Latina Legacy<br>
+						-<em>2014: </em>Worked as a stage hand for Reston Community Players, an all-volunteer non-profit community theater</td>
+				</tr>
+				</tbody>
+			</table>
+			</div>
+		</div>	
 		<div class="main" id="work">		
 			<h1>Work Experience</h1>
+			<div id="workcontainer" id="fadework">
+				<img id="walmartpic" src="http://i1376.photobucket.com/albums/ah36/blueD2/Walmart-Logo_zpsav0gkkhf.png">
+				<div id="walmartwords">
+					&#9668 <b>Walmart</b><br><em>2015</em><br>
+					Worked a summer job as a cashier, averaging 20 hours per week
+				</div>
+				<img id="tutorpic" src="http://i1376.photobucket.com/albums/ah36/blueD2/calc_zpsbubsqe8s.png">
+				<div id = "tutorwords">
+					&#9668 <b>Self-employed</b><br><em>2016-2017</em><br>
+					Tutored math, science, and computing about 4 hours every week
+				</div>
+			</div>
 		</div>
 		<div class="main" id="awards">		
 			<h1>Awards &amp; Honors</h1>
+			<div id="fadeawards">
 			<table>
 				<tbody><tr>
 				<td><ul>
@@ -199,7 +251,7 @@
 					<li>Highlighted Highlanders Award, 11
 					<li>1st place: Balfour Intensity Slow Shutter Photography Contest, 11
 			</ul></td>
-				<td><h2>Academic UIL</h2><ul>
+				<td><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Academic UIL</h2><ul>
 					<li>3rd place team, 5th place individual: Social Studies UIL Regionals, 12
 					<li>6th place team, 10th place individual: Computer Science UIL Regionals, 12
 					<li>1st place team, 2nd place individual: Computer Science UIL Districts, 12
@@ -210,6 +262,7 @@
 			</ul></td>
 				</tr></tbody>
 			</table>
+			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script>
@@ -238,17 +291,34 @@
 				if($(this).scrollTop() > 0) {
 					testAnimation();
 				}
-				if ($(this).scrollTop() > 500){
+				if ($(this).scrollTop() > 400){
 					$("#fadeactivities").fadeIn("slow");
 				}
-				/*if ($(this).width() < 992) {
-					if ($(this).height() <= 768) {
-						
-						
-					}
-				}*/
+				if ($(this).scrollTop() > 1255){
+					$("#fadeservice").fadeIn("slow");
+				}
+				if ($(this).scrollTop() > 1800){
+					$("#fadework").fadeIn("slow");
+				}
+				if ($(this).scrollTop() > 2040){
+					$("#fadeawards").fadeIn("slow");
+				}
 			});
-
+			
+			$("#walmartpic").hover(function() {
+				$("#walmartwords").css("background-color","rgba(0, 0, 0,.7)");
+			});
+			$("#walmartpic").mouseout(function() {
+				$("#walmartwords").css("background-color","ghostwhite");
+			});
+			
+			$("#tutorpic").hover(function() {
+				$("#tutorwords").css("background-color","rgba(0, 0, 0,.7)");
+			});
+			$("#tutorpic").mouseout(function() {
+				$("#tutorwords").css("background-color","ghostwhite");
+			});
+			
 			function psat() {
 				var draw = document.getElementById("psat").getContext("2d");
 				draw.beginPath();
